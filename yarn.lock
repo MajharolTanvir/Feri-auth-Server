@@ -2647,3 +2647,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.22.0-canary.20230623T202513:
+  version "3.22.0-canary.20230623T202513"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.22.0-canary.20230623T202513.tgz#c5d33c8c81fd10fa136b5b25a450fcb614c63da9"
+  integrity sha512-PiREepTFC88GxEz2VPQUOgXk0QAvcPfxLlPeLDLYqLqOYHyjeX8r/ke/2BOFaDZfz6T7mfj50+qQMtTfO/CHdQ==
