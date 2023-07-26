@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 10
+    },
+    "auditLog": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/error/.82b88481b6925efe9eeb2c6100846c516fb44462-audit.json",
+    "files": [
+        {
+            "date": 1690343457160,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/error/phu-2023-26-07-09-error.log",
+            "hash": "cb04d918ea77846ad8f7488832c633f7e7265c75f0e04407d72840feeb6a857f"
+        },
+        {
+            "date": 1690344096371,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/error/phu-2023-26-07-10-error.log",
+            "hash": "7fc7358a69828455511f543f2bfe10496406dd78e02fb7039107ca9d20d85161"
+        }
+    ],
+    "hashType": "sha256"
+}
