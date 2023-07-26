@@ -7,6 +7,7 @@ export type UserType = {
     lastName: 'string'
   }
   email: 'string'
+  password: string
   role: RoleType
   contactNo: 'string'
   address: {
