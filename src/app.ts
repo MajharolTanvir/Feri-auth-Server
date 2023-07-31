@@ -3,6 +3,8 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import globalErrorHandler from './app/middleware/globalErrorHandler'
 import routes from './app/routes/router'
+import sendResponse from './shared/sendResponse'
+import httpStatus from 'http-status'
 
 const app: Application = express()
 
@@ -16,7 +18,11 @@ app.use('/api/v1', routes)
 app.use(globalErrorHandler)
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Server running successfully',
+  })
 })
 
 export default app

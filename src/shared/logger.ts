@@ -11,12 +11,12 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
   const hour = date.getHours()
   const minutes = date.getMinutes()
   const seconds = date.getSeconds()
-  return `${date.toDateString()}, ${hour}:${minutes}:${seconds} [${label}] => ${level} ${message}`
+  return `${date.toDateString()}, ${hour}:${minutes}:${seconds} [${label}] ${level} => ${message}`
 })
 
 const logger = createLogger({
   level: 'info',
-  format: combine(label({ label: 'WS' }), timestamp(), myFormat),
+  format: combine(label({ label: 'FERI' }), timestamp(), myFormat),
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(),
@@ -38,7 +38,7 @@ const logger = createLogger({
 
 const errorLogger = createLogger({
   level: 'error',
-  format: combine(label({ label: 'WS' }), timestamp(), myFormat),
+  format: combine(label({ label: 'FERI' }), timestamp(), myFormat),
   defaultMeta: { service: 'user-service' },
   transports: [
     new transports.Console(),

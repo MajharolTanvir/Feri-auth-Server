@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-console */
 import { ErrorRequestHandler } from 'express'
@@ -12,8 +14,6 @@ import handleZodError from '../../errors/handleZodError'
 import handleDuplicateError from '../../errors/handleDuplicateError'
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
-  res.status(400).json({ err: error })
-
   config.env === 'development'
     ? console.log('globalErrorHandler 🤖', error)
     : errorLogger.error('globalErrorHandler 🤖', error)
@@ -72,8 +72,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
   })
-
-  next()
 }
 
 export default globalErrorHandler

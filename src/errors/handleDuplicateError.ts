@@ -10,18 +10,18 @@ type DuplicateKeyError = {
 } & Error
 
 const handleDuplicateError = (
-  err: DuplicateKeyError,
+  error: DuplicateKeyError,
 ): GenericErrorResponseType => {
   const errors: GenericErrorMessageType[] = [
     {
       path: '',
-      message: err.message,
+      message: error.message,
     },
   ]
   const statusCode = 400
   let duplicateValue = null
-  if (err.keyValue) {
-    duplicateValue = Object.keys(err.keyPattern)
+  if (error.keyValue) {
+    duplicateValue = Object.keys(error.keyPattern)
   }
   return {
     statusCode,

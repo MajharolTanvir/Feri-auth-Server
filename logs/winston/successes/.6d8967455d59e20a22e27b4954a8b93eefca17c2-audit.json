@@ -1,20 +1,45 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/.6d8967455d59e20a22e27b4954a8b93eefca17c2-audit.json",
-  "files": [
-    {
-      "date": 1690343457157,
-      "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-09-success.log",
-      "hash": "86ea063c5eaa37665f771d88eb41b3ca15621d079699c3c41609f0c5bc648d04"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1690344096367,
-      "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-10-success.log",
-      "hash": "0703457562026846d28ce7f7f1d6c9b5c239f82df87785d8de3fd17e496c25d6"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/.6d8967455d59e20a22e27b4954a8b93eefca17c2-audit.json",
+    "files": [
+        {
+            "date": 1690343457157,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-09-success.log",
+            "hash": "86ea063c5eaa37665f771d88eb41b3ca15621d079699c3c41609f0c5bc648d04"
+        },
+        {
+            "date": 1690344096367,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-10-success.log",
+            "hash": "0703457562026846d28ce7f7f1d6c9b5c239f82df87785d8de3fd17e496c25d6"
+        },
+        {
+            "date": 1690347604341,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-11-success.log",
+            "hash": "3711934c3b9995ef0a442c8202cbedd6f4401365f733bd6ed9b8fb8eaf2d9417"
+        },
+        {
+            "date": 1690352559544,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-12-success.log",
+            "hash": "7d589508bda6c0d9556de0ec2bb87f5d6eda9a248a4542fa2f5a0e57b7f13a24"
+        },
+        {
+            "date": 1690354835524,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-13-success.log",
+            "hash": "22ce26595fa4c7a037b24b73b8bcf092d6fc4f05b52dbdf58989d16a18175a09"
+        },
+        {
+            "date": 1690378099504,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-26-07-19-success.log",
+            "hash": "b48c157102c979263177825c541f0737719dd108025af149bbcec200d968ba3a"
+        },
+        {
+            "date": 1690811127852,
+            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-31-07-19-success.log",
+            "hash": "e7550e72f39814725fdcadfd7bb3a79431e0f6a494b22a2e7efda563b3b92f51"
+        }
+    ],
+    "hashType": "sha256"
 }
