@@ -11,4 +11,8 @@ router.post(
   UserController.signup,
 )
 
+router.get('/login', UserController.login)
+router.post('/forget-password', UserController.forgetPassword)
+router.post('/reset-password', UserController.resetPassword)
+
 export const UserRoutes = router

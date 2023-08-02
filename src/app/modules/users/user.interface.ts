@@ -2,6 +2,11 @@
 import { Model } from 'mongoose'
 import { RoleType } from './user.constant'
 
+export type UserLogin = {
+  email: string
+  password: string
+}
+
 export type UserType = {
   name: {
     firstName: string
@@ -16,6 +21,7 @@ export type UserType = {
     permanentAddress: string
   }
   profile: string
+  token: string
 }
 
 export type UserMethodType = {

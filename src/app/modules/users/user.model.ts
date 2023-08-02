@@ -51,6 +51,10 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
       required: true,
       default: 'https://cdn.kibrispdr.org/data/637/icon-profile-png-0.png',
     },
+    token: {
+      type: String,
+      default: '',
+    },
   },
   {
     timestamps: true,
@@ -85,4 +89,4 @@ UserSchema.pre('save', async function (next) {
   next()
 })
 
-export const User = model<UserType, UserModel>('user', UserSchema)
+export const User = model<UserType, UserModel>('User', UserSchema)
