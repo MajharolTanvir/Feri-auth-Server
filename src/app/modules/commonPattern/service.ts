@@ -32,6 +32,11 @@ const addSize = async (categoryData: ColorType) => {
   return size
 }
 
+const getSizes = async () => {
+  const sizes = await Size.find({})
+  return sizes
+}
+
 const editSize = async (categoryData: ColorType, id: string) => {
   const size = await Size.findByIdAndUpdate(
     { _id: id },
@@ -50,6 +55,11 @@ const deleteSize = async (id: string) => {
 const addWeight = async (categoryData: ColorType) => {
   const weight = await Weight.create(categoryData)
   return weight
+}
+
+const getWeights = async () => {
+  const sizes = await Weight.find({})
+  return sizes
 }
 
 const editWeight = async (categoryData: ColorType, id: string) => {
@@ -72,9 +82,11 @@ export const CommonService = {
   editColor,
   deleteColor,
   addSize,
+  getSizes,
   editSize,
   deleteSize,
   addWeight,
+  getWeights,
   editWeight,
   deleteWeight,
 }

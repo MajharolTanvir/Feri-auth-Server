@@ -66,6 +66,17 @@ const addSize = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getSizes = catchAsync(async (req: Request, res: Response) => {
+  const result = await CommonService.getSizes()
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'All sizes retrieved successfully',
+    data: result,
+  })
+})
+
 const editSize = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
   const sizeData = req.body.name
@@ -104,6 +115,17 @@ const addWeight = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getWeights = catchAsync(async (req: Request, res: Response) => {
+  const result = await CommonService.getWeights()
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'All weights retrieved successfully',
+    data: result,
+  })
+})
+
 const editWeight = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
   const weightData = req.body.name
@@ -135,9 +157,11 @@ export const CommonController = {
   editColor,
   deleteColor,
   addSize,
+  getSizes,
   editSize,
   deleteSize,
   addWeight,
+  getWeights,
   editWeight,
   deleteWeight,
 }

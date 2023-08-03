@@ -29,6 +29,8 @@ router.patch(
   CommonController.editSize,
 )
 
+router.get('/get-sizes', CommonController.getSizes)
+
 router.delete('/delete-size/:id', CommonController.deleteSize)
 
 router.post(
@@ -43,6 +45,8 @@ router.patch(
   validateRequest(CommonValidation.updateWeightZodSchema),
   CommonController.editWeight,
 )
+
+router.get('/get-weight', CommonController.getWeights)
 
 router.delete('/delete-weight/:id', CommonController.deleteWeight)
 
