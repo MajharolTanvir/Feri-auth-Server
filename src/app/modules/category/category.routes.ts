@@ -5,6 +5,12 @@ import validateRequest from '../../middleware/validateRequest'
 const router = express.Router()
 
 router.post(
+  '/edit-category/:id',
+  validateRequest(CategoryValidation.updateCategoryZodSchema),
+  CategoryController.editCategory,
+)
+
+router.post(
   '/add-category',
   validateRequest(CategoryValidation.createCategoryZodSchema),
   CategoryController.addCategory,

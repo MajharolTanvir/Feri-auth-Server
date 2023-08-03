@@ -11,11 +11,25 @@ const addCategory = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'User signup successfully',
+    message: 'Category added successfully',
+    data: result,
+  })
+})
+
+const editCategory = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params
+  const categoryData = req.body.name
+  const result = await CategoryService.editCategory(categoryData, id)
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Category edited successfully',
     data: result,
   })
 })
 
 export const CategoryController = {
   addCategory,
+  editCategory,
 }
