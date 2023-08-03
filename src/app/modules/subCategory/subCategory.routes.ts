@@ -10,6 +10,8 @@ router.patch(
   SubCategoryController.editSubCategory,
 )
 
+router.get('/get-subcategories', SubCategoryController.getAllSubCategory)
+
 router.delete(
   '/delete-sub-category/:id',
   SubCategoryController.deleteSubCategory,

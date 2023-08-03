@@ -16,8 +16,8 @@ const addCategory = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
-const getALlCategory = catchAsync(async (req: Request, res: Response) => {
-  const result = await CategoryService.getALlCategory()
+const getAllCategory = catchAsync(async (req: Request, res: Response) => {
+  const result = await CategoryService.getAllCategory()
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -54,7 +54,7 @@ const deleteCategory = catchAsync(async (req: Request, res: Response) => {
 
 export const CategoryController = {
   addCategory,
-  getALlCategory,
+  getAllCategory,
   editCategory,
   deleteCategory,
 }

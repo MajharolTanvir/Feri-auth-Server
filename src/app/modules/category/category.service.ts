@@ -6,7 +6,7 @@ const addCategory = async (categoryData: CategoryType) => {
   return category
 }
 
-const getALlCategory = async () => {
+const getAllCategory = async () => {
   const categories = await Category.find({})
   return categories
 }
@@ -27,7 +27,7 @@ const deleteCategory = async (id: string) => {
 
 export const CategoryService = {
   addCategory,
-  getALlCategory,
+  getAllCategory,
   editCategory,
   deleteCategory,
 }

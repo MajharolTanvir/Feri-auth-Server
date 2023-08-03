@@ -8,6 +8,11 @@ const addSubCategory = async (categoryData: SubCategoryType) => {
   return subCategory
 }
 
+const getAllSubCategory = async () => {
+  const categories = await SubCategory.find({})
+  return categories
+}
+
 const editSubCategory = async (categoryData: SubCategoryType, id: string) => {
   const subCategory = await SubCategory.findByIdAndUpdate(
     { _id: id },
@@ -24,6 +29,7 @@ const deleteSubCategory = async (id: string) => {
 
 export const SubCategoryService = {
   addSubCategory,
+  getAllSubCategory,
   editSubCategory,
   deleteSubCategory,
 }
