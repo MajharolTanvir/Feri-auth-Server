@@ -5,11 +5,14 @@ import { CommonController } from './controller'
 const router = express.Router()
 
 //* Color routes
+
 router.patch(
   '/edit-color/:id',
   validateRequest(CommonValidation.updateColorZodSchema),
   CommonController.editColor,
 )
+
+router.get('/get-color', CommonController.getColors)
 
 router.delete('/delete-color/:id', CommonController.deleteColor)
 

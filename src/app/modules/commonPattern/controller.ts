@@ -17,6 +17,17 @@ const addColor = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const getColors = catchAsync(async (req: Request, res: Response) => {
+  const result = await CommonService.getColors()
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'All colors retrieved successfully',
+    data: result,
+  })
+})
+
 const editColor = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
   const colorData = req.body.name
@@ -120,6 +131,7 @@ const deleteWeight = catchAsync(async (req: Request, res: Response) => {
 
 export const CommonController = {
   addColor,
+  getColors,
   editColor,
   deleteColor,
   addSize,

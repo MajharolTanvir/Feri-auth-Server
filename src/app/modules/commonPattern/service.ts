@@ -7,6 +7,11 @@ const addColor = async (categoryData: ColorType) => {
   return color
 }
 
+const getColors = async () => {
+  const colors = await Color.find({})
+  return colors
+}
+
 const editColor = async (categoryData: ColorType, id: string) => {
   const color = await Color.findByIdAndUpdate(
     { _id: id },
@@ -63,6 +68,7 @@ const deleteWeight = async (id: string) => {
 
 export const CommonService = {
   addColor,
+  getColors,
   editColor,
   deleteColor,
   addSize,
