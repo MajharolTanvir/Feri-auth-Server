@@ -2,6 +2,7 @@ import express from 'express'
 import { UserRoutes } from '../modules/users/user.routes'
 import { CategoryRoutes } from '../modules/category/category.routes'
 import { SubCategoryRoutes } from '../modules/subCategory/subCategory.routes'
+import { CommonRoutes } from '../modules/commonPattern/routes'
 
 const router = express.Router()
 
@@ -17,6 +18,10 @@ const moduleRoutes = [
   {
     path: '/subcategory',
     route: SubCategoryRoutes,
+  },
+  {
+    path: '/common',
+    route: CommonRoutes,
   },
 ]
 
