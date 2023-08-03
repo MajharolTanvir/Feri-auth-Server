@@ -15,7 +15,13 @@ const editCategory = async (categoryData: CategoryType, id: string) => {
   return category
 }
 
+const deleteCategory = async (id: string) => {
+  const category = await Category.findByIdAndDelete({ _id: id })
+  return category
+}
+
 export const CategoryService = {
   addCategory,
   editCategory,
+  deleteCategory,
 }

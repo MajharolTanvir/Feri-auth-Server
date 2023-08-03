@@ -4,11 +4,13 @@ import { CategoryController } from './category.controller'
 import validateRequest from '../../middleware/validateRequest'
 const router = express.Router()
 
-router.post(
+router.patch(
   '/edit-category/:id',
   validateRequest(CategoryValidation.updateCategoryZodSchema),
   CategoryController.editCategory,
 )
+
+router.delete('/delete-category/:id', CategoryController.deleteCategory)
 
 router.post(
   '/add-category',
