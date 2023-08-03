@@ -29,7 +29,7 @@ const getAllSubCategory = catchAsync(async (req: Request, res: Response) => {
 
 const editSubCategory = catchAsync(async (req: Request, res: Response) => {
   const { id } = req.params
-  const categoryData = req.body.name
+  const categoryData = req.body
   const result = await SubCategoryService.editSubCategory(categoryData, id)
 
   sendResponse(res, {

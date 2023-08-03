@@ -14,7 +14,7 @@ const getAllCategory = async () => {
 const editCategory = async (categoryData: CategoryType, id: string) => {
   const category = await Category.findByIdAndUpdate(
     { _id: id },
-    { name: categoryData },
+    { categoryData },
     { new: true },
   )
   return category

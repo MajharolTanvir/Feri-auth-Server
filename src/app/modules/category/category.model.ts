@@ -9,6 +9,10 @@ const CategorySchema = new Schema<CategoryType, Record<string, never>>(
       required: true,
       unique: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

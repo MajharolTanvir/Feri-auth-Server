@@ -14,6 +14,10 @@ const SubCategorySchema = new Schema<SubCategoryType, Record<string, never>>(
       required: true,
       unique: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

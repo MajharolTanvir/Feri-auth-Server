@@ -16,7 +16,7 @@ const getAllSubCategory = async () => {
 const editSubCategory = async (categoryData: SubCategoryType, id: string) => {
   const subCategory = await SubCategory.findByIdAndUpdate(
     { _id: id },
-    { name: categoryData },
+    { categoryData },
     { new: true },
   ).populate('categoryId')
   return subCategory
