@@ -6,6 +6,11 @@ const addCategory = async (categoryData: CategoryType) => {
   return category
 }
 
+const getALlCategory = async () => {
+  const categories = await Category.find({})
+  return categories
+}
+
 const editCategory = async (categoryData: CategoryType, id: string) => {
   const category = await Category.findByIdAndUpdate(
     { _id: id },
@@ -22,6 +27,7 @@ const deleteCategory = async (id: string) => {
 
 export const CategoryService = {
   addCategory,
+  getALlCategory,
   editCategory,
   deleteCategory,
 }

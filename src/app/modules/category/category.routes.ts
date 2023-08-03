@@ -10,6 +10,8 @@ router.patch(
   CategoryController.editCategory,
 )
 
+router.get('/get-categories', CategoryController.getALlCategory)
+
 router.delete('/delete-category/:id', CategoryController.deleteCategory)
 
 router.post(
