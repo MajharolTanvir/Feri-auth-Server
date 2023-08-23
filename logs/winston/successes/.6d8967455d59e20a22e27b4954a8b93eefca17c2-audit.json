@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/.6d8967455d59e20a22e27b4954a8b93eefca17c2-audit.json",
-    "files": [
-        {
-            "date": 1692833608491,
-            "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-24-08-05-success.log",
-            "hash": "b84fe8caf2c2572b5f9b67a4b0de84b8b9a26073d4f0bf196aa642db9fd71a2a"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/.6d8967455d59e20a22e27b4954a8b93eefca17c2-audit.json",
+  "files": [
+    {
+      "date": 1692833608491,
+      "name": "/home/webshilpo/Working-files/NEXT.JS/feri/feri-server/logs/winston/successes/phu-2023-24-08-05-success.log",
+      "hash": "b84fe8caf2c2572b5f9b67a4b0de84b8b9a26073d4f0bf196aa642db9fd71a2a"
+    }
+  ],
+  "hashType": "sha256"
 }
