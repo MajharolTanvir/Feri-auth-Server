@@ -32,7 +32,7 @@ const signupZodSchema = z.object({
       }),
     }),
     profile: z.string().optional(),
-    token: z.string(),
+    token: z.string().optional(),
   }),
 })
 

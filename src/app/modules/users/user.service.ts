@@ -9,7 +9,6 @@ import nodemailer from 'nodemailer'
 import randomstring from 'randomstring'
 import { errorLogger, logger } from '../../../shared/logger'
 import { ParsedQs } from 'qs'
-// import bcrypt from 'bcrypt'
 
 const sendResetPasswordWithMail = (
   name: string,

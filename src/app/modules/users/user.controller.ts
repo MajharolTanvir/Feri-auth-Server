@@ -35,7 +35,7 @@ const forgetPassword = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Password reset link sent successfully',
+    message: 'Password reset link sent successfully. Please check yor email',
     data: result,
   })
 })
