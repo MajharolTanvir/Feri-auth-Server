@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/webshilpo/Working-files/complete-project/feri/feri-server/logs/winston/successes/.e16b22a279af051ce67d86c36c6cd42b20fd6bec-audit.json",
+    "files": [
+        {
+            "date": 1695295059893,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-server/logs/winston/successes/phu-2023-21-09-17-success.log",
+            "hash": "f0f8e74576777fc9878eadbbb480f2561b84566602da93e3eb1d0ea51486df8e"
+        }
+    ],
+    "hashType": "sha256"
+}

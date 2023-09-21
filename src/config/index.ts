@@ -17,4 +17,8 @@ export default {
   emailUser: process.env.EMAIL_USER,
   emailPassword: process.env.EMAIL_PASSWORD,
   emailHost: process.env.EMAIL_HOST,
+  redis: {
+    url: process.env.REDIS_URL,
+    expires_in: process.env.REDIS_EXPIRES_IN,
+  },
 }
