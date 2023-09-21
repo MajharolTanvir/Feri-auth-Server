@@ -20,18 +20,6 @@ const signupZodSchema = z.object({
     role: z.enum([...roles] as [string, ...string[]], {
       required_error: 'Role is required',
     }),
-    contactNo: z.string({
-      required_error: 'Contact no is required',
-    }),
-    address: z.object({
-      presentAddress: z.string({
-        required_error: 'Present address is required',
-      }),
-      permanentAddress: z.string({
-        required_error: 'Permanent address is required',
-      }),
-    }),
-    profile: z.string().optional(),
     token: z.string().optional(),
   }),
 })

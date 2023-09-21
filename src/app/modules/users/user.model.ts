@@ -12,6 +12,9 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
         type: String,
         required: true,
       },
+      middleName: {
+        type: String,
+      },
       lastName: {
         type: String,
         required: true,
@@ -31,25 +34,6 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
       type: String,
       required: true,
       enum: roles,
-    },
-    contactNo: {
-      type: String,
-      required: true,
-    },
-    address: {
-      presentAddress: {
-        type: String,
-        required: true,
-      },
-      permanentAddress: {
-        type: String,
-        required: true,
-      },
-    },
-    profile: {
-      type: String,
-      required: true,
-      default: 'https://cdn.kibrispdr.org/data/637/icon-profile-png-0.png',
     },
     token: {
       type: String,

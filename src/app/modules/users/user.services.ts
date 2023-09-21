@@ -9,6 +9,8 @@ import nodemailer from 'nodemailer'
 import randomstring from 'randomstring'
 import { errorLogger, logger } from '../../../shared/logger'
 import { ParsedQs } from 'qs'
+import { RedisClient } from '../../../shared/redis'
+import { EVENT_USER_CREATED } from './user.constant'
 
 const sendResetPasswordWithMail = (
   name: string,
@@ -49,7 +51,29 @@ const sendResetPasswordWithMail = (
 
 const signup = async (userData: UserType) => {
   const user = await User.create(userData)
-  return user
+
+  const { _id: userId, email: userEmail, role } = user
+  const accessToken = JwtHelper.createToken(
+    { userId, userEmail, role },
+    config.jwt.secret as Secret,
+    config.jwt.expires_in as string,
+  )
+
+  const refreshToken = JwtHelper.createToken(
+    { userId, userEmail, role },
+    config.jwt.refresh_secret as Secret,
+    config.jwt.refresh_expire_in as string,
+  )
+
+  if (user) {
+    await RedisClient.publish(EVENT_USER_CREATED, JSON.stringify(user))
+  }
+
+  return {
+    user,
+    accessToken,
+    refreshToken,
+  }
 }
 
 const login = async (userData: UserLogin) => {
@@ -69,15 +93,15 @@ const login = async (userData: UserLogin) => {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'Password does not match')
   }
 
-  const { email: userEmail, role } = isUserExist
+  const { _id: userId, email: userEmail, role } = isUserExist
   const accessToken = JwtHelper.createToken(
-    { userEmail, role },
+    { userId, userEmail, role },
     config.jwt.secret as Secret,
     config.jwt.expires_in as string,
   )
 
   const refreshToken = JwtHelper.createToken(
-    { userEmail, role },
+    { userId, userEmail, role },
     config.jwt.refresh_secret as Secret,
     config.jwt.refresh_expire_in as string,
   )

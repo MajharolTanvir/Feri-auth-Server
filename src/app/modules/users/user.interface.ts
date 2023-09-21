@@ -8,19 +8,15 @@ export type UserLogin = {
 }
 
 export type UserType = {
+  _id?: string
   name: {
     firstName: string
+    middleName: string
     lastName: string
   }
   email: string
   password: string
   role: RoleType
-  contactNo: string
-  address: {
-    presentAddress: string
-    permanentAddress: string
-  }
-  profile: string
   token: string
 }
 
