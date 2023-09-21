@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 10
-    },
-    "auditLog": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/.e7d3ea7dc22aa3c981f0b659478a1295ceed083a-audit.json",
-    "files": [
-        {
-            "date": 1695302539386,
-            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-19-error.log",
-            "hash": "3aa9a19b741fd60b27a06e8a22a2df1ea1a9c4d533da1cb501048a6a1964b95f"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 10
+  },
+  "auditLog": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/.e7d3ea7dc22aa3c981f0b659478a1295ceed083a-audit.json",
+  "files": [
+    {
+      "date": 1695302539386,
+      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-19-error.log",
+      "hash": "3aa9a19b741fd60b27a06e8a22a2df1ea1a9c4d533da1cb501048a6a1964b95f"
+    }
+  ],
+  "hashType": "sha256"
 }
