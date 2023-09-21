@@ -3,6 +3,10 @@ import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import httpStatus from 'http-status'
 import { UserService } from './user.services'
+import { Secret } from 'jsonwebtoken'
+import config from '../../../config'
+import { JwtHelper } from '../../../shared/jwtHelper'
+import ApiError from '../../../errors/ApiError'
 
 const signup = catchAsync(async (req: Request, res: Response) => {
   const user = req.body
@@ -43,6 +47,7 @@ const forgetPassword = catchAsync(async (req: Request, res: Response) => {
 const resetPassword = catchAsync(async (req: Request, res: Response) => {
   const token = req.query.token
   const { password } = req.body
+  console.log(token, password)
   const result = await UserService.resetPassword(token, password)
 
   sendResponse(res, {
@@ -53,9 +58,34 @@ const resetPassword = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+const updateUserProfile = catchAsync(async (req: Request, res: Response) => {
+  const token = req.headers.authorization
+
+  if (!token) {
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'You are not authorized')
+  }
+
+  let verifiedUser = null
+
+  verifiedUser = JwtHelper.verifyToken(token, config.jwt.secret as Secret)
+
+  const result = await UserService.updateUserProfile(
+    verifiedUser?.userId,
+    req.body,
+  )
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Profile updated successfully',
+    data: result,
+  })
+})
+
 export const UserController = {
   signup,
   login,
   forgetPassword,
   resetPassword,
+  updateUserProfile,
 }

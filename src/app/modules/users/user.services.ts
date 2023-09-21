@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import httpStatus from 'http-status'
 import ApiError from '../../../errors/ApiError'
 import { UserLogin, UserType } from './user.interface'
@@ -10,7 +11,7 @@ import randomstring from 'randomstring'
 import { errorLogger, logger } from '../../../shared/logger'
 import { ParsedQs } from 'qs'
 import { RedisClient } from '../../../shared/redis'
-import { EVENT_USER_CREATED } from './user.constant'
+import { EVENT_USER_CREATED, EVENT_USER_UPDATED } from './user.constant'
 
 const sendResetPasswordWithMail = (
   name: string,
@@ -31,11 +32,11 @@ const sendResetPasswordWithMail = (
   const mailOptions = {
     from: config.emailUser,
     to: email,
-    subject: 'Rest your Feribd website password',
+    subject: 'Reset your Feribd website password',
     html:
       '<h3>Dear honorable user ' +
       name +
-      ',</h3><p> Please click on the following link to <a href="http://localhost:5000/api/v1/users/reset-password/?token=' +
+      ',</h3><p>Please click on the following link to <a href ="http://localhost:5005/api/v1/users/reset-password/?token=' +
       token +
       '"> reset your password </a></p>',
   }
@@ -148,9 +149,38 @@ const resetPassword = async (
   }
 }
 
+const updateUserProfile = async (id: string, e: any) => {
+  const user = await User.findByIdAndUpdate(
+    { _id: id },
+    {
+      contactNo: e?.contactNo,
+      presentAddress: e?.presentAddress,
+      profileImage: e?.profileImage,
+      shopName: e?.shopName,
+      shopContactNo: e?.shopContactNo,
+      country: e?.country,
+      division: e?.division,
+      district: e?.district,
+      area: e?.ares,
+      nidNumber: e?.nidNumber,
+      treadLicenseNo: e?.treadLicenseNo,
+    },
+    { new: true },
+  )
+
+  if (user) {
+    await RedisClient.publish(EVENT_USER_UPDATED, JSON.stringify(user))
+  }
+
+  console.log(user)
+
+  return user
+}
+
 export const UserService = {
   signup,
   login,
   forgetPassword,
   resetPassword,
+  updateUserProfile,
 }

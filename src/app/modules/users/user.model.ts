@@ -13,7 +13,6 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
     },
     middleName: {
       type: String,
-      required: true,
     },
     lastName: {
       type: String,
@@ -37,6 +36,39 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
     token: {
       type: String,
       default: '',
+    },
+    contactNo: {
+      type: String,
+    },
+    presentAddress: {
+      type: String,
+    },
+    profileImage: {
+      type: String,
+    },
+    shopName: {
+      type: String,
+    },
+    shopContactNo: {
+      type: String,
+    },
+    country: {
+      type: String,
+    },
+    division: {
+      type: String,
+    },
+    district: {
+      type: String,
+    },
+    area: {
+      type: String,
+    },
+    nidNumber: {
+      type: String,
+    },
+    treadLicenseNo: {
+      type: String,
     },
   },
   {

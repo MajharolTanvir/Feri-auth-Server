@@ -16,6 +16,17 @@ export type UserType = {
   password: string
   role: RoleType
   token: string
+  contactNo?: string
+  presentAddress?: string
+  profileImage?: string
+  shopName?: string
+  shopContactNo?: string
+  country?: string
+  division?: string
+  district?: string
+  area?: string
+  nidNumber?: string
+  treadLicenseNo?: string
 }
 
 export type UserMethodType = {
