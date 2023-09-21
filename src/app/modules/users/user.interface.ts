@@ -9,11 +9,9 @@ export type UserLogin = {
 
 export type UserType = {
   _id?: string
-  name: {
-    firstName: string
-    middleName: string
-    lastName: string
-  }
+  firstName: string
+  middleName: string
+  lastName: string
   email: string
   password: string
   role: RoleType

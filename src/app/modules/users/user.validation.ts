@@ -3,13 +3,11 @@ import { roles } from './user.constant'
 
 const signupZodSchema = z.object({
   body: z.object({
-    name: z.object({
-      firstName: z.string({
-        required_error: 'First name is required',
-      }),
-      lastName: z.string({
-        required_error: 'Last name is required',
-      }),
+    firstName: z.string({
+      required_error: 'First name is required',
+    }),
+    lastName: z.string({
+      required_error: 'Last name is required',
     }),
     email: z.string({
       required_error: 'Email is required',

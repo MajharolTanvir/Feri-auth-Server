@@ -7,18 +7,17 @@ import { roles } from './user.constant'
 
 const UserSchema = new Schema<UserType, Record<string, never>>(
   {
-    name: {
-      firstName: {
-        type: String,
-        required: true,
-      },
-      middleName: {
-        type: String,
-      },
-      lastName: {
-        type: String,
-        required: true,
-      },
+    firstName: {
+      type: String,
+      required: true,
+    },
+    middleName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
     },
     email: {
       type: String,

@@ -122,7 +122,7 @@ const forgetPassword = async (email: string) => {
       { $set: { token: resetToken } },
       { new: true },
     )
-    const name = user?.name.firstName + ' ' + user?.name.lastName
+    const name = user?.firstName + ' ' + user?.lastName
     sendResetPasswordWithMail(name, user!.email, resetToken)
   } else {
     throw new ApiError(httpStatus.NOT_FOUND, "The user doesn't exist")

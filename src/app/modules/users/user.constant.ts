@@ -1,8 +1,8 @@
 export type RoleType = {
-  role: 'admin' | 'moderator' | 'buyer' | 'seller'
+  role: 'BUYER' | 'SELLER' | 'MODERATOR' | 'ADMIN'
 }
 
-export const roles = ['admin', 'moderator', 'buyer', 'seller']
+export const roles = ['ADMIN', 'MODERATOR', 'SELLER', 'BUYER']
 
 export const EVENT_USER_CREATED = 'user-created'
 export const EVENT_USER_UPDATED = 'user-updated'
