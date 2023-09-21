@@ -47,7 +47,6 @@ const forgetPassword = catchAsync(async (req: Request, res: Response) => {
 const resetPassword = catchAsync(async (req: Request, res: Response) => {
   const token = req.query.token
   const { password } = req.body
-  console.log(token, password)
   const result = await UserService.resetPassword(token, password)
 
   sendResponse(res, {

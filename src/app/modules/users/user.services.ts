@@ -172,8 +172,6 @@ const updateUserProfile = async (id: string, e: any) => {
     await RedisClient.publish(EVENT_USER_UPDATED, JSON.stringify(user))
   }
 
-  console.log(user)
-
   return user
 }
 
