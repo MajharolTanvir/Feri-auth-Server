@@ -1,45 +1,65 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 10
-  },
-  "auditLog": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/.e7d3ea7dc22aa3c981f0b659478a1295ceed083a-audit.json",
-  "files": [
-    {
-      "date": 1695302539386,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-19-error.log",
-      "hash": "3aa9a19b741fd60b27a06e8a22a2df1ea1a9c4d533da1cb501048a6a1964b95f"
+    "keep": {
+        "days": true,
+        "amount": 10
     },
-    {
-      "date": 1695304827923,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-20-error.log",
-      "hash": "d6e8ea87c1aecd75964f86e9a947652a3c7bc57f8dccbd9ae528140d10294105"
-    },
-    {
-      "date": 1695309316252,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-21-error.log",
-      "hash": "87f3e1b647535c04688755b4bbf5f19e2780bf7ba81dc4ee3b1a65e69391d944"
-    },
-    {
-      "date": 1695312000098,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-22-error.log",
-      "hash": "3340898d3d15ab3acb8f2e3d9a635d8b895b50a068504c6285feb1a4d66061c7"
-    },
-    {
-      "date": 1695316968111,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-23-error.log",
-      "hash": "da71f5de22261c85432e6d57b1e6e7df490618111f3b308ebc1a2c35805fd972"
-    },
-    {
-      "date": 1695319703048,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-22-09-00-error.log",
-      "hash": "c849b53c2b63eb36367482b7fd76d114aa970a4fb688e959001d98e415797427"
-    },
-    {
-      "date": 1695323268358,
-      "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-22-09-01-error.log",
-      "hash": "ff9970cbf06d035994dd835e89ccc4b3b7fae43870b03ea68a9cb3f1ba21d05c"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/.e7d3ea7dc22aa3c981f0b659478a1295ceed083a-audit.json",
+    "files": [
+        {
+            "date": 1695302539386,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-19-error.log",
+            "hash": "3aa9a19b741fd60b27a06e8a22a2df1ea1a9c4d533da1cb501048a6a1964b95f"
+        },
+        {
+            "date": 1695304827923,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-20-error.log",
+            "hash": "d6e8ea87c1aecd75964f86e9a947652a3c7bc57f8dccbd9ae528140d10294105"
+        },
+        {
+            "date": 1695309316252,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-21-error.log",
+            "hash": "87f3e1b647535c04688755b4bbf5f19e2780bf7ba81dc4ee3b1a65e69391d944"
+        },
+        {
+            "date": 1695312000098,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-22-error.log",
+            "hash": "3340898d3d15ab3acb8f2e3d9a635d8b895b50a068504c6285feb1a4d66061c7"
+        },
+        {
+            "date": 1695316968111,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-21-09-23-error.log",
+            "hash": "da71f5de22261c85432e6d57b1e6e7df490618111f3b308ebc1a2c35805fd972"
+        },
+        {
+            "date": 1695319703048,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-22-09-00-error.log",
+            "hash": "c849b53c2b63eb36367482b7fd76d114aa970a4fb688e959001d98e415797427"
+        },
+        {
+            "date": 1695323268358,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-22-09-01-error.log",
+            "hash": "ff9970cbf06d035994dd835e89ccc4b3b7fae43870b03ea68a9cb3f1ba21d05c"
+        },
+        {
+            "date": 1695447450478,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-23-09-11-error.log",
+            "hash": "869658e2c45f9effe0802f4d1452672b7bf2906888055a8c8ab4ea26fce34ddb"
+        },
+        {
+            "date": 1695450998966,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-23-09-12-error.log",
+            "hash": "3215f66e1d01b6c676d3971d0b66903f8ea9c288e8c2f145aac5c0c9e1ef2619"
+        },
+        {
+            "date": 1695465184007,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-23-09-16-error.log",
+            "hash": "ea78e090fb1d6b4b3615456bcee75d3bb3bf16a750d0a1f89bac8568441a9c2b"
+        },
+        {
+            "date": 1695475093356,
+            "name": "/home/webshilpo/Working-files/complete-project/feri/feri-auth-service/logs/winston/error/phu-2023-23-09-19-error.log",
+            "hash": "1093881b4fb7e62b991aad6cfe829b041e905f44f857c9a5c329ba60ba151fc1"
+        }
+    ],
+    "hashType": "sha256"
 }

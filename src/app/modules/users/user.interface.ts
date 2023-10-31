@@ -15,6 +15,8 @@ export type UserType = {
   email: string
   password: string
   role: RoleType
+  confirmedCode: number
+  validation: boolean
   token: string
   contactNo?: string
   presentAddress?: string

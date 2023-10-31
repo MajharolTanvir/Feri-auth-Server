@@ -3,7 +3,7 @@ import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import httpStatus from 'http-status'
 import { UserService } from './user.services'
-import { Secret } from 'jsonwebtoken'
+import { JwtPayload, Secret } from 'jsonwebtoken'
 import config from '../../../config'
 import { JwtHelper } from '../../../shared/jwtHelper'
 import ApiError from '../../../errors/ApiError'
@@ -16,6 +16,18 @@ const signup = catchAsync(async (req: Request, res: Response) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'User signup successfully',
+    data: result,
+  })
+})
+
+const confirmedSignup = catchAsync(async (req: Request, res: Response) => {
+  const { userEmail } = req.user as JwtPayload
+  const result = await UserService.confirmedSignup(req.body, userEmail)
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Account has been created successfully',
     data: result,
   })
 })
@@ -87,4 +99,5 @@ export const UserController = {
   forgetPassword,
   resetPassword,
   updateUserProfile,
+  confirmedSignup,
 }

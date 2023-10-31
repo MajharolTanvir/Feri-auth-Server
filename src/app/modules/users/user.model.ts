@@ -33,6 +33,14 @@ const UserSchema = new Schema<UserType, Record<string, never>>(
       required: true,
       enum: roles,
     },
+    validation: {
+      type: Boolean,
+      default: false,
+    },
+    confirmedCode: {
+      type: Number,
+      default: 0,
+    },
     token: {
       type: String,
       default: '',

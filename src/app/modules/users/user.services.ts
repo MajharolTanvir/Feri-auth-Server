@@ -50,7 +50,50 @@ const sendResetPasswordWithMail = (
   })
 }
 
+const sendSignUpCode = (name: string, email: string, code: number | null) => {
+  const transporter = nodemailer.createTransport({
+    host: config.emailHost,
+    port: 25,
+    secure: false,
+    requireTLS: true,
+    auth: {
+      user: config.emailUser,
+      pass: config.emailPassword,
+    },
+  })
+
+  const mailOptions = {
+    from: config.emailUser,
+    to: email,
+    subject: 'Quick tour plan website signup validation!',
+    html: `
+        <div style="width: 50%; margin: 0 auto; text-align: center;">
+            <h2>Dear valued user ${name},</h2>
+            <p>Thank you for signing up on our website. To complete your registration, please enter the verification code below:</p>
+            <h1 style="font-size: 2rem; background-color: #007bff; color: #fff; padding: 10px; border-radius: 5px;">${code}</h1>
+            <p>If you did not request this code, please ignore this message.</p>
+            <p>Thank you for choosing our services!</p>
+        </div>`,
+  }
+
+  transporter.sendMail(
+    mailOptions,
+    function (error: any, info: { response: any }) {
+      if (error) {
+        console.error('Error sending email:', error)
+      } else {
+        console.info('Email sent:', info.response)
+      }
+    },
+  )
+}
+
 const signup = async (userData: UserType) => {
+  const min = 100000
+  const max = 999999
+  const randomNum = Math.floor(Math.random() * (max - min + 1)) + min
+
+  userData.confirmedCode = randomNum
   const user = await User.create(userData)
 
   const { _id: userId, email: userEmail, role } = user
@@ -60,20 +103,31 @@ const signup = async (userData: UserType) => {
     config.jwt.expires_in as string,
   )
 
-  const refreshToken = JwtHelper.createToken(
-    { userId, userEmail, role },
-    config.jwt.refresh_secret as Secret,
-    config.jwt.refresh_expire_in as string,
-  )
+  await sendSignUpCode(user.firstName, user.email, user.confirmedCode)
+
+  return accessToken
+}
+
+const confirmedSignup = async (data: any, userEmail: string) => {
+  const user = new User()
+  const isUserExist = await user.isUserExist(userEmail)
+
+  if (!isUserExist) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Email not found!')
+  }
+
+  if (isUserExist.confirmedCode === data.confirmedCode) {
+    await user.updateOne(
+      { email: userEmail },
+      {
+        validation: true,
+        confirmedCode: 0,
+      },
+    )
+  }
 
   if (user) {
     await RedisClient.publish(EVENT_USER_CREATED, JSON.stringify(user))
-  }
-
-  return {
-    user,
-    accessToken,
-    refreshToken,
   }
 }
 
@@ -181,4 +235,5 @@ export const UserService = {
   forgetPassword,
   resetPassword,
   updateUserProfile,
+  confirmedSignup,
 }

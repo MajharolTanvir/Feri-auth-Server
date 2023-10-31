@@ -12,6 +12,13 @@ router.post(
   validateRequest(UserValidation.signupZodSchema),
   UserController.signup,
 )
+
+router.post(
+  '/confirm-signup',
+  auth(ENUM_USER_ROLE.BUYER, ENUM_USER_ROLE.SELLER),
+  UserController.confirmedSignup,
+)
+
 router.post('/login', UserController.login)
 
 router.patch(
